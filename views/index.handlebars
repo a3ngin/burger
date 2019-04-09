@@ -1,17 +1,17 @@
 <h1>Burgers!</h1>
 
-<h2>Burgers that have been tried!</h2>
+<h2>Burgers you want to try!</h2>
 
 <ul>
   {{#each burgers}}
     {{#unless this.triedYet}}
-<button type="submit" class="subby" data-id"{{id}}" data-subby="{{triedYet}}">{{this.name}}</button>
+<button type="submit" class="subby" data-id="{{id}}" data-test="{{triedYet}}">{{this.name}}</button>
     {{/unless}}
   {{/each}}
 
 </ul>
 
-<h2>Burgers!</h2>
+<h2>Burgers Tried!</h2>
 <form class="create-form" action="/api/burgers" method="POST">
 <ul>
   {{#each burgers}}
@@ -21,18 +21,14 @@
   {{/each}}
 </ul>
 
-<h2>Burgers Eaten!</h2>
+<h2>Add the Burger You Want To Try!</h2>
 
   <div class="form-group">
     <label for="ca">Burger Name:</label>
     <input type="text" id="ca" name="name">
   </div>
 
-  <div class="form-group">
-    <label for="triedYet">Tried this one yet?</label><br>
-    <input type="radio" name="triedYet" value="1" checked> Tried!<br>
-    <input type="radio" name="triedYet" value="0"> Awake
-  </div>
+  
 
   <button type="submit">Add Burger!</button>
 </form>
